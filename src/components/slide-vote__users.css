@@ -1,0 +1,241 @@
+.slide-vote__users {
+    display: grid;
+    grid-template-areas:
+        "first second top-btn third fourth"
+        "first fifth bottom-btn sixth fourth";
+    align-items: center;
+    column-gap: 8.25vmin; /* 31px */
+    margin-bottom: 1.33vmin; /* 5px */
+    row-gap: 0.8vmin; /* 3px */
+    justify-content: center;
+}
+
+.vote__user {
+    width: 15.57vmax; /* 104px */
+    height: 37.76vmin; /* 142px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.vote__user:hover {
+    cursor: pointer;
+    background: radial-gradient(85.62% 148.33% at 49.85% 100%, rgba(68, 58, 42, 0.7864) 0%, rgba(0, 0, 0, 0.8) 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(255, 255, 255, 0.1);
+}
+
+.theme_light .vote__user:hover {
+    background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+}
+
+.vote__user_selected {
+    position: relative;
+    width: 15.57vmax; /* 104px */
+    height: 37.76vmin; /* 142px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.4);
+}
+
+.theme_light .vote__user_selected {
+    background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+}
+
+.vote__user:active {
+    background: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.4);
+}
+
+.theme_light .vote__user:active {
+    background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+}
+
+.vote__user-name {
+    font-family: var(--font-family-medium);
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-18);
+    color: var(--color-white);
+    text-align: center;
+    padding-left: 1.1vmin; /* 6px */
+    padding-right: 1.1vmin;
+}
+
+.theme_light .vote__user-name {
+    color: var(--color-black);
+}
+
+.vote__user-1 {
+    grid-area: first;
+}
+
+.vote__user-2 {
+    grid-area: second;
+}
+
+.vote__user-3 {
+    grid-area: third;
+}
+
+.vote__user-4 {
+    grid-area: fourth;
+}
+
+.vote__user-5 {
+    grid-area: fifth;
+}
+
+.vote__user-6 {
+    grid-area: sixth;
+}
+
+.vote__user-avatar {
+    border-radius: 50%;
+    filter: grayscale(1);
+    width: 17.1vmin; /* 64px */
+    height: 17.1vmin;
+    margin-bottom: 1.6vmin; /* 6px */
+}
+
+.vote__user-emoji {
+    display: inline-block;
+    font-size: 8.52vmin; /* 32px */
+    line-height: 8.52vmin;
+    position: absolute;
+    z-index: 2;
+    top: -1.33vmin; /* -5px */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.theme_light .vote__user-avatar {
+    filter: none;
+}
+
+[class^="vote__top-btn"] {
+    width: 17.1vmin; /* 64px */
+    height: 17.1vmin;
+    background: url("images/button-disabled-dark.svg") no-repeat;
+    background-size: cover;
+    transform: scale(1, -1) translateY(-3.2vmin); /* -12px */
+}
+
+.theme_light .vote__top-btn_active {
+    background-image: url("images/button-active-light.svg");
+}
+
+.theme_light .vote__top-btn {
+    background-image: url("images/button-disabled-light.svg");
+}
+
+.theme_light .vote__bottom-btn {
+    background-image: url("images/button-disabled-light.svg");
+}
+
+[class^="vote__bottom-btn"] {
+    width: 17.1vmin; /* 64px */
+    height: 17.1vmin;
+    background: url("images/button-disabled-dark.svg") no-repeat;
+    background-size: cover;
+    transform: translateY(-12px);
+}
+
+.vote__top-btn_active {
+    background-image: url("images/button-active-dark.svg");
+}
+
+.vote__bottom-btn_active {
+    background-image: url("images/button-active-dark.svg");
+}
+
+.theme_light .vote__bottom-btn_active {
+    background-image: url("images/button-active-light.svg");
+}
+
+.vote__bottom-btn_active:active,
+.vote__top-btn_active:active {
+    background-image: url("images/button-disabled-dark.svg");
+}
+
+.theme_light .vote__bottom-btn_active:active,
+.theme_light .vote__top-btn_active:active {
+    background-image: url("images/button-disabled-light.svg");
+}
+
+@media (orientation: portrait) {
+    .slide-vote__users {
+        grid-template-areas:
+            "first top-btn third"
+            "fourth second sixth"
+            "seventh fifth eighth"
+            ". bottom-btn .";
+        row-gap: 5.86vmin; /* 22px */
+        column-gap: 2.13vmin; /* 8px */
+    }
+
+    .vote__user-7 {
+        grid-area: seventh;
+    }
+
+    .vote__user-8 {
+        grid-area: eighth;
+    }
+
+    [class^="vote__bottom-btn"] {
+        grid-area: bottom-btn;
+    }
+
+    [class^="vote__top-btn"], [class^="vote__bottom-btn"] {
+        justify-self: center;
+        align-self: center;
+    }
+
+    [class^="vote__top-btn"] {
+        margin-top: -30.6vmin; /* -115px */
+        margin-left: -0.27vmin; /* -1px */
+    }
+
+    .vote__user-2 {
+        margin-top: -44.15vmin; /* -166px */
+    }
+
+     .vote__user-5 {
+         margin-top: -43.36vmin; /* -163px */
+     }
+
+     [class^="vote__bottom-btn"] {
+         margin-top: -20vmin; /* -75px */
+         margin-left: -0.27vmin;
+     }
+
+    .vote__user-empty {
+        width: 15.57vmax; /* 104px */
+        height: 37.76vmin; /* 142px */
+    }
+
+}
+
+@media (orientation: portrait) and (min-device-height: 700px) and
+(max-device-width: 375px) {
+    .slide-vote__users {
+        margin-bottom: 25vmin; /* 94px */
+    }
+
+    .vote__user-name {
+        padding-left: 2.1vmin;
+        padding-right: 2.1vmin;
+    }
+
+    .vote__user, .vote__user_selected, .vote__user-empty {
+        width: 13.57vmax;
+    }
+
+}

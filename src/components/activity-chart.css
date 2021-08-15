@@ -1,0 +1,103 @@
+.activity-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    transform: translateX(-2.27vmin); /* -8.5px */
+}
+
+.activity-chart__day-of-week {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+}
+
+.activity-chart__day-of-week:nth-child(2n) {
+    transform: translateX(4.53vmin); /* 17px */
+}
+
+[class^="activity-chart__m"], [class^="activity-chart__ex"] {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.activity-chart__min {
+    width: 9.04vmin; /* 34px */
+    height: 9.04vmin;
+    background-image: url("images/min-dark.svg");
+}
+
+.activity-chart__mid {
+    width: 9.04vmin; /* 34px */
+    height: 11vmin; /* 41px */
+    background-image: url("images/mid-dark.svg");
+}
+
+.activity-chart__max {
+    width: 9.04vmin;
+    height: 15.16vmin; /* 57px */
+    background-image: url("images/max-dark.svg");
+}
+
+.activity-chart__extra {
+    width: 9.04vmin;
+    height: 19.42vmin; /* 73px */
+    background-image: url("images/extra-dark.svg");
+}
+
+.theme_light .activity-chart__min {
+    background-image: url("images/min-light.svg");
+}
+
+.theme_light .activity-chart__mid {
+    background-image: url("images/mid-light.svg");
+}
+
+.theme_light .activity-chart__max {
+    background-image: url("images/max-light.svg");
+}
+
+.theme_light .activity-chart__extra {
+    background-image: url("images/extra-light.svg");
+}
+
+@media (orientation: portrait) {
+    .activity-chart {
+        transform: translateX(-3vmin); /* -11px */
+    }
+
+    .activity-chart__day-of-week:nth-child(2n) {
+        transform: none;
+    }
+
+    .activity-chart__day-of-week:nth-child(2n + 1) {
+        transform: translateX(5.86vmin); /* 22px */
+    }
+
+    .activity-chart__min {
+        width: 11.44vmin; /* 43px */
+        height: 11.44vmin;
+        background-image: url("images/min-dark.svg");
+    }
+
+    .activity-chart__mid {
+        width: 11.44vmin; /* 43px */
+        height: 13.9vmin; /* 52px */
+        background-image: url("images/mid-dark.svg");
+    }
+
+    .activity-chart__max {
+        width: 11.44vmin;
+        height: 19.15vmin; /* 72px */
+        background-image: url("images/max-dark.svg");
+    }
+
+    .activity-chart__extra {
+        width: 11.44vmin;
+        height: 24.5vmin; /* 92px */
+        background-image: url("images/extra-dark.svg");
+    }
+
+}

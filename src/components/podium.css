@@ -1,0 +1,196 @@
+:root {
+    --podium__grade-bg: linear-gradient(180deg, rgba(0, 0, 0, 0) -2.22%, rgba(0, 0, 0, 0.8) 100%), radial-gradient(149.08% 95.38% at 38.75% 71.48%, #000000 0%, #231900 0.01%, #4D4D4D 100%);
+    --podium__grade-bs: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(103, 103, 103, 0.6);
+    --podium__best-bg: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+    --podium__best-bs: inset -1px 1px 1px rgb(255 255 255 / 40%), inset 0px 6px 15px rgb(255 162 0 / 40%);
+}
+
+.theme_light {
+    --podium__grade-bg: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+    --podium__grade-bs: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+    --podium__best-bg: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+    --podium__best-bs: inset -1px 1px 1px rgb(255 255 255 / 50%), inset 0px 0px 20px rgb(255 176 57 / 80%)
+}
+
+.podium {
+    display: grid;
+    grid-template-columns: repeat(5, 15.57vmax); /* 104px */
+    justify-content: center;
+}
+
+.podium__leader {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.podium__leader:nth-child(1) {
+    order: 3;
+    z-index: 2;
+}
+
+.podium__leader:nth-child(2) {
+    order: 4;
+    z-index: 1;
+}
+
+.podium__leader:nth-child(3) {
+    order: 2;
+    z-index: 1;
+}
+
+.podium__leader:nth-child(4) {
+    order: 5;
+    z-index: 0;
+}
+
+.podium__leader:nth-child(5) {
+    order: 1;
+    z-index: 0;
+}
+
+.podium__leader-avatar {
+    border-radius: 50%;
+    filter: grayscale(1);
+}
+
+.podium__leader-emoji {
+    display: inline-block;
+    font-size: 8.52vmin; /* 32px */
+    line-height: 8.52vmin;
+    position: absolute;
+    z-index: 2;
+    top: -5.86vmin; /* -22px */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.theme_light .podium__leader-avatar {
+    filter: none;
+}
+
+.podium__leader-name {
+    margin-top: 2px;
+    font-size: var(--font-size-16); /* 16px */
+    line-height: var(--line-height-18); /* 18px */
+    font-family: var(--font-family-medium);
+    color: var(--color-white);
+}
+
+.theme_light .podium__leader-name {
+    color: var(--color-black);
+}
+
+.podium__leader-score {
+    margin-top: 1.33vmin; /* 5px */
+    font-size: 3.72vmin; /* 14px */
+    line-height: 4.25vmin; /* 16px */
+    font-family: var(--font-family-thin);
+    color: var(--color-grey-on-dark);
+}
+
+.theme_light .podium__leader-score {
+    color: var(--color-grey-on-light);
+}
+
+[class^="podium__user"] {
+    margin: 0 1.1vmin 4.26vmin; /* 4px 16px */
+}
+
+.podium__user_selected {
+    display: block;
+}
+
+.podium__user-5, .podium__user-3 {
+    transform: translateX(-2.13vmin) /* -8px */;
+}
+
+.podium__user-2, .podium__user-4 {
+    transform: translateX(2.13vmin) /* 8px */;
+}
+
+[class^="podium__grade-"] {
+    background: var(--podium__grade-bg);
+    box-shadow: var(--podium__grade-bs);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 32vmin; /* 120px */
+}
+
+.podium__grade-1 {
+    height: 28.8vmin; /* 108px */
+    background: var(--podium__best-bg);
+    box-shadow: var(--podium__best-bs);
+}
+
+.podium__grade-2 {
+    height: 23.5vmin; /* 88px */
+}
+
+.podium__grade-3 {
+    height: 23.5vmin; /* 88px */
+}
+
+.podium__grade-4 {
+    height: 18.1vmin; /* 68px */
+}
+
+.podium__grade-5 {
+    height: 18.1vmin; /* 68px */
+}
+
+[class^="podium__text-"] {
+    padding-top: 4.79vmin; /* 18px */
+    font-weight: bold;
+    font-size: 7.97vmin; /* 30px */
+    line-height: 8.52vmin; /* 32px */
+    font-family: var(--font-family-bold);
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--color-white);
+    width: 27.6vmin; /* 104px */
+}
+
+.podium__text-1 {
+    margin: auto;
+}
+
+.podium__text-2, .podium__text-4 {
+    margin-left: auto;
+}
+
+.theme_light [class^="podium__text-"] {
+    color: var(--color-black);
+}
+
+@media (orientation: portrait) {
+    .podium {
+        grid-template-columns: repeat(3, 27.66vmin); /* 104px */
+        grid-template-rows: 1fr;
+    }
+
+    .podium__leader:nth-child(4), .podium__leader:nth-child(5) {
+        display: none;
+    }
+
+    .podium__grade-1 {
+        height: 48.66vmax; /* 325px */
+    }
+
+    .podium__grade-2 {
+        height: 41.17vmax; /* 275px */
+    }
+
+    .podium__grade-3 {
+        height: 33.69vmax; /* 225px */
+    }
+}
+
+@media (min-aspect-ratio: 18 / 9) and (max-aspect-ratio: 24 / 9) {
+    .podium {
+        grid-template-columns: repeat(5, 13.57vmax);
+    }
+}
