@@ -12,7 +12,7 @@ import Vote from "./slides/vote";
 import Chart from "./slides/chart";
 
 const fetchSlideData = async () => {
-    return await fetch('/data.json').then(response => response.json());
+    return await fetch('./data.json').then(response => response.json());
 };
 
 fetchSlideData()
