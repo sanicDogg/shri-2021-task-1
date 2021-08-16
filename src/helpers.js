@@ -63,7 +63,7 @@ const changeSlide = (eCode) => {
     window.renderTemplate(alias, data);
     let { pathname } = document.location;
     changeUrl(document.title,
-        `${pathname || ""}/?slide=${window.currSlide}&theme=${window.currTheme}`);
+        `${pathname || "/"}?slide=${window.currSlide}&theme=${window.currTheme}`);
 }
 
 export function addEventListeners() {
