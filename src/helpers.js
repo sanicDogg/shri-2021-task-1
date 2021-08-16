@@ -61,7 +61,9 @@ const changeSlide = (eCode) => {
     let slideData = window.allSlidesData[window.currSlide - 1];
     const { alias, data } = slideData;
     window.renderTemplate(alias, data);
-    changeUrl(document.title, `/?slide=${window.currSlide}&theme=${window.currTheme}`)
+    let { pathname } = document.location;
+    changeUrl(document.title,
+        `${pathname || ""}/?slide=${window.currSlide}&theme=${window.currTheme}`);
 }
 
 export function addEventListeners() {
